@@ -1,0 +1,22 @@
+<script>
+    function toggle() {
+      const container = document.getElementById("container");
+      const text = document.getElementById("text");
+      const button = event.target;
+      
+      // Check if in initial state
+      if (container.classList.contains("changed")) {
+        // Revert to initial state
+        container.style.backgroundColor = "lightblue";
+        text.innerText = "Initial Text";
+        button.innerText = "Click Me!";
+        container.classList.remove("changed");
+      } else {
+        // Change the state
+        container.style.backgroundColor = "lightcoral";
+        text.innerText = "Changed Text";
+        button.innerText = "Reset";
+        container.classList.add("changed");
+      }
+    }
+  </script>
