@@ -4,60 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Button and Container Toggle</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+    
+    .container {
+      text-align: center;
+      padding: 20px;
+      background-color: lightblue;
+      border: 2px solid #333;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+    
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background-color 0.3s ease;
+    }
+  </style>
 </head>
 <body>
+
   <div class="container" id="container">
     <p id="text">Initial Text</p>
-    <button id="toggleButton">Click Me!</button>
+    <button onclick="toggle()">Click Me!</button>
   </div>
 
-  <script src="script.js"></script>
+  
 </body>
 </html>
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-}
-
-.container {
-  text-align: center;
-  padding: 20px;
-  background-color: lightblue;
-  border: 2px solid #333;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 15px;
-  transition: background-color 0.3s ease;
-}
-document.getElementById("toggleButton").addEventListener("click", function () {
-  const container = document.getElementById("container");
-  const text = document.getElementById("text");
-  const button = document.getElementById("toggleButton");
-
-  // Check if in initial state
-  if (container.classList.contains("changed")) {
-    // Revert to initial state
-    container.style.backgroundColor = "lightblue";
-    text.innerText = "Initial Text";
-    button.innerText = "Click Me!";
-    container.classList.remove("changed");
-  } else {
-    // Change the state
-    container.style.backgroundColor = "lightcoral";
-    text.innerText = "Changed Text";
-    button.innerText = "Reset";
-    container.classList.add("changed");
-  }
-});
